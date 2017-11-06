@@ -19,6 +19,9 @@ close(con)
 #Sustituir todos los valores "" por NA
 is.na(opos) <- opos==''
 
+#Guardado de fecha de descarga en dataframe
+opos$FechaCarga <- date()
+
 #Renombrado de columnas
 
 colnames(opos)[3] <- "TipoConvocatoria"
