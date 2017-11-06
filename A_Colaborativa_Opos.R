@@ -8,9 +8,6 @@ if(!file.exists("./datos")) {dir.create("./datos")}
 fileUrl <- "http://www.datosabiertos.jcyl.es/web/jcyl/risp/es/sector-publico/convocatoriaspublicas/1284165772128.csv"
 download.file(fileUrl,destfile="./datos/oposiciones.csv",method="libcurl")
 
-#Guardar fecha descarga
-fechaDescarga <- date()
-
 #Guardar en subven(dataframe) el contenido del dataset, descartando la primera linea
 con <- file("./datos/oposiciones.csv","r")
 opos <- read.csv2(con,skip=1,skipNul = FALSE)
